@@ -60,6 +60,14 @@ const App: React.FC = () => {
 
             <AddBook onBookAdd={addBook} />
             <hr />
+
+            <div className="row">
+                <div className="col">
+                    <a href="https://github.com/wtlgo/AydarBookList">
+                        Source code
+                    </a>
+                </div>
+            </div>
         </div>
     );
 };

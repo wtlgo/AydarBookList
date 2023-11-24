@@ -25,8 +25,6 @@ export const sortBooks = (books: Book[], criteria: SortCriterion[]) =>
                 }
             })();
 
-            console.log(lhs, rhs, field, direction, res);
-
             return res;
         }
 
