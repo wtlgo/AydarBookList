@@ -16,16 +16,12 @@ export const sortBooks = (books: Book[], criteria: SortCriterion[]) =>
 
             if (l == r) continue;
 
-            const res = (() => {
-                switch (direction) {
-                    case SortDirection.ASC:
-                        return l < r ? -1 : 1;
-                    case SortDirection.DESC:
-                        return l < r ? 1 : -1;
-                }
-            })();
-
-            return res;
+            switch (direction) {
+                case SortDirection.ASC:
+                    return l < r ? -1 : 1;
+                case SortDirection.DESC:
+                    return l < r ? 1 : -1;
+            }
         }
 
         return 0;
