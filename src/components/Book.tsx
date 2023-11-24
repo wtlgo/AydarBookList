@@ -1,5 +1,6 @@
 import React from "react";
 import { Book } from "../business/book";
+import img from "bootstrap-icons/icons/image-fill.svg";
 
 export interface BookItemProps {
     book: Book;
@@ -13,8 +14,8 @@ const BookItem: React.FC<BookItemProps> = ({ book, onRemove }) => {
             <div className="col">
                 <div className="ratio ratio-1x1">
                     <img
-                        src={book.image ?? ""}
-                        className="img-fluid rounded object-fit-cover"
+                        src={book.image ?? img}
+                        className="img-fluid img-thumbnail object-fit-cover"
                     />
                 </div>
             </div>
