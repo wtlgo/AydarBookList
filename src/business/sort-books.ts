@@ -6,11 +6,14 @@ export const sortBooks = (books: Book[], criteria: SortCriterion[]) =>
         for (const { field, direction } of [...criteria].reverse()) {
             if (direction == SortDirection.NEUTRAL) continue;
 
-            const l = lhs[field];
+            let l = lhs[field];
             if (typeof l == "undefined") continue;
+            if (typeof l == "string") l = l.toLocaleLowerCase();
 
-            const r = rhs[field];
+            let r = rhs[field];
             if (typeof r == "undefined") continue;
+            if (typeof r == "string") r = r.toLocaleLowerCase();
+
             if (l == r) continue;
 
             const res = (() => {
