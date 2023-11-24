@@ -3,7 +3,7 @@ import { SortCriterion, SortDirection } from "./sort-criterion";
 
 export const sortBooks = (books: Book[], criteria: SortCriterion[]) =>
     [...books].sort((lhs, rhs) => {
-        for (const { field, direction } of criteria.reverse()) {
+        for (const { field, direction } of criteria) {
             if (direction == SortDirection.NEUTRAL) continue;
 
             let l = lhs[field];
@@ -24,6 +24,8 @@ export const sortBooks = (books: Book[], criteria: SortCriterion[]) =>
                         return l < r ? 1 : -1;
                 }
             })();
+
+            console.log(lhs, rhs, field, direction, res);
 
             return res;
         }
